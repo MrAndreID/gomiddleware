@@ -1,6 +1,7 @@
 package gomiddleware
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 )
@@ -13,6 +14,6 @@ func Log(next http.HandlerFunc) http.HandlerFunc {
 		next(response, request)
 
 		log.Println("Closing")
-		log.Println()
+		fmt.Println()
 	})
 }
