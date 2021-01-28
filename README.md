@@ -38,6 +38,38 @@ router := mux.NewRouter().StrictSlash(true)
 router.Handle("/api/v1/", gomiddleware.Log(Documentation)).Methods("GET")
 ```
 
+### Acceptable
+
+```go
+router := mux.NewRouter().StrictSlash(true)
+
+router.Handle("/api/v1/", gomiddleware.Acceptable(Documentation)).Methods("GET")
+```
+
+### Client ID
+
+```go
+router := mux.NewRouter().StrictSlash(true)
+
+router.Handle("/api/v1/", gomiddleware.ClientID(Documentation)).Methods("GET")
+```
+
+### Timestamp
+
+```go
+router := mux.NewRouter().StrictSlash(true)
+
+router.Handle("/api/v1/", gomiddleware.Timestamp(Documentation)).Methods("GET")
+```
+
+### App ID
+
+```go
+router := mux.NewRouter().StrictSlash(true)
+
+router.Handle("/api/v1/", gomiddleware.AppID(Documentation)).Methods("GET")
+```
+
 ## Versioning
 
 I use [SemVer](https://semver.org/) for versioning. For the versions available, see the tags on this repository. 
