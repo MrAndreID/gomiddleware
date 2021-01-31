@@ -68,3 +68,15 @@ func AppID(next http.HandlerFunc) http.HandlerFunc {
 		next(response, request)
 	})
 }
+
+func PrivateKey(next http.HandlerFunc) http.HandlerFunc {
+	return http.HandlerFunc(func(response http.ResponseWriter, request *http.Request) {
+		if request.Header["Private-Key"] == nil || request.Header["Private-Key"][0] == "" {
+			helpers.HandleResponse(response, 400, "private key not found", nil)
+
+			return
+		}
+
+		next(response, request)
+	})
+}
