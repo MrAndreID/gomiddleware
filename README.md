@@ -43,7 +43,7 @@ router.Handle("/api/v1/", gomiddleware.Log(Documentation)).Methods("GET")
 ```go
 router := mux.NewRouter().StrictSlash(true)
 
-router.Handle("/api/v1/", gomiddleware.Acceptable(Documentation)).Methods("GET")
+router.Handle("/api/v1/", gomiddleware.Acceptable(Documentation)).Methods("POST")
 ```
 
 ### Client ID
@@ -51,7 +51,7 @@ router.Handle("/api/v1/", gomiddleware.Acceptable(Documentation)).Methods("GET")
 ```go
 router := mux.NewRouter().StrictSlash(true)
 
-router.Handle("/api/v1/", gomiddleware.ClientID(Documentation)).Methods("GET")
+router.Handle("/api/v1/", gomiddleware.ClientID(Documentation)).Methods("POST")
 ```
 
 ### Timestamp
@@ -59,7 +59,7 @@ router.Handle("/api/v1/", gomiddleware.ClientID(Documentation)).Methods("GET")
 ```go
 router := mux.NewRouter().StrictSlash(true)
 
-router.Handle("/api/v1/", gomiddleware.Timestamp(Documentation)).Methods("GET")
+router.Handle("/api/v1/", gomiddleware.Timestamp(Documentation)).Methods("POST")
 ```
 
 ### App ID
@@ -67,7 +67,7 @@ router.Handle("/api/v1/", gomiddleware.Timestamp(Documentation)).Methods("GET")
 ```go
 router := mux.NewRouter().StrictSlash(true)
 
-router.Handle("/api/v1/", gomiddleware.AppID(Documentation)).Methods("GET")
+router.Handle("/api/v1/", gomiddleware.AppID(Documentation)).Methods("POST")
 ```
 
 ### Private Key
@@ -75,7 +75,7 @@ router.Handle("/api/v1/", gomiddleware.AppID(Documentation)).Methods("GET")
 ```go
 router := mux.NewRouter().StrictSlash(true)
 
-router.Handle("/api/v1/", gomiddleware.PrivateKey(Documentation)).Methods("GET")
+router.Handle("/api/v1/", gomiddleware.PrivateKey(Documentation)).Methods("POST")
 ```
 
 ## Versioning
