@@ -77,3 +77,15 @@ func PrivateKey(next http.HandlerFunc) http.HandlerFunc {
 		next(response, request)
 	})
 }
+
+func ContentType(next http.HandlerFunc) http.HandlerFunc {
+	return http.HandlerFunc(func(response http.ResponseWriter, request *http.Request) {
+		if request.Header["Content-Type"] == nil || request.Header["Content-Type"][0] == "" {
+			helpers.HandleResponse(response, 400, "content type not found", nil)
+
+			return
+		}
+
+		next(response, request)
+	})
+}

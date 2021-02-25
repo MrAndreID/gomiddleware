@@ -78,6 +78,14 @@ router := mux.NewRouter().StrictSlash(true)
 router.Handle("/api/v1/", gomiddleware.PrivateKey(Documentation)).Methods("POST")
 ```
 
+### Content Type
+
+```go
+router := mux.NewRouter().StrictSlash(true)
+
+router.Handle("/api/v1/", gomiddleware.ContentType(Documentation)).Methods("POST")
+```
+
 ## Versioning
 
 I use [SemVer](https://semver.org/) for versioning. For the versions available, see the tags on this repository. 
