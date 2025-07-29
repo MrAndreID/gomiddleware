@@ -1,6 +1,6 @@
 module github.com/MrAndreID/gomiddleware
 
-go 1.15
+go 1.24
 
 require (
 	github.com/MrAndreID/gohelpers v1.4.4
