@@ -111,6 +111,18 @@ router := mux.NewRouter().StrictSlash(true)
 router.Handle("/api/v1/", gomiddleware.ContentType(Documentation)).Methods("POST")
 ```
 
+### Set Request ID for Echo Framework
+
+```go
+import (
+    "github.com/MrAndreID/gomiddleware"
+)
+
+e := echo.New()
+
+e.Pre(gomiddleware.EchoSetRequestID)
+```
+
 ## Versioning
 
 I use [Semantic Versioning](https://semver.org/). For the versions available, see the tags on this repository. 
