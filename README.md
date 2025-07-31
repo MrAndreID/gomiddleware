@@ -27,57 +27,85 @@ go get -u github.com/MrAndreID/gomiddleware
 
 To use The `MrAndreID/GoMiddleware` package, you must combine it with The `gorilla/mux` package or The `Echo Framework`.
 
-### Log
+### Log for Gorilla Mux
 
 ```go
+import (
+    "github.com/MrAndreID/gomiddleware"
+)
+
 router := mux.NewRouter().StrictSlash(true)
 
 router.Handle("/api/v1/", gomiddleware.Log(Documentation)).Methods("GET")
 ```
 
-### Acceptable
+### Acceptable for Gorilla Mux
 
 ```go
+import (
+    "github.com/MrAndreID/gomiddleware"
+)
+
 router := mux.NewRouter().StrictSlash(true)
 
 router.Handle("/api/v1/", gomiddleware.Acceptable(Documentation)).Methods("POST")
 ```
 
-### Client ID
+### Client ID for Gorilla Mux
 
 ```go
+import (
+    "github.com/MrAndreID/gomiddleware"
+)
+
 router := mux.NewRouter().StrictSlash(true)
 
 router.Handle("/api/v1/", gomiddleware.ClientID(Documentation)).Methods("POST")
 ```
 
-### Timestamp
+### Timestamp for Gorilla Mux
 
 ```go
+import (
+    "github.com/MrAndreID/gomiddleware"
+)
+
 router := mux.NewRouter().StrictSlash(true)
 
 router.Handle("/api/v1/", gomiddleware.Timestamp(Documentation)).Methods("POST")
 ```
 
-### App ID
+### App ID for Gorilla Mux
 
 ```go
+import (
+    "github.com/MrAndreID/gomiddleware"
+)
+
 router := mux.NewRouter().StrictSlash(true)
 
 router.Handle("/api/v1/", gomiddleware.AppID(Documentation)).Methods("POST")
 ```
 
-### Private Key
+### Private Key for Gorilla Mux
 
 ```go
+import (
+    "github.com/MrAndreID/gomiddleware"
+)
+
 router := mux.NewRouter().StrictSlash(true)
 
 router.Handle("/api/v1/", gomiddleware.PrivateKey(Documentation)).Methods("POST")
 ```
 
-### Content Type
+### Content Type for Gorilla Mux
 
 ```go
+import (
+    "github.com/MrAndreID/gomiddleware"
+)
+
 router := mux.NewRouter().StrictSlash(true)
 
 router.Handle("/api/v1/", gomiddleware.ContentType(Documentation)).Methods("POST")
