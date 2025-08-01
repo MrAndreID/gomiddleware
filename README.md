@@ -135,6 +135,18 @@ e := echo.New()
 e.Use(gomiddleware.EchoSetNoCache)
 ```
 
+### Set Route List for Echo Framework
+
+```go
+import (
+    "github.com/MrAndreID/gomiddleware"
+)
+
+e := echo.New()
+
+e.Use(gomiddleware.EchoSetRouteList)
+```
+
 ## Versioning
 
 I use [Semantic Versioning](https://semver.org/). For the versions available, see the tags on this repository. 
