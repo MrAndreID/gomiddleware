@@ -123,6 +123,18 @@ e := echo.New()
 e.Pre(gomiddleware.EchoSetRequestID)
 ```
 
+### Set No Cache for Echo Framework
+
+```go
+import (
+    "github.com/MrAndreID/gomiddleware"
+)
+
+e := echo.New()
+
+e.Use(gomiddleware.EchoSetNoCache)
+```
+
 ## Versioning
 
 I use [Semantic Versioning](https://semver.org/). For the versions available, see the tags on this repository. 
