@@ -147,6 +147,18 @@ e := echo.New()
 e.Use(gomiddleware.EchoSetRouteList)
 ```
 
+### Set Maintenance Mode for Echo Framework
+
+```go
+import (
+    "github.com/MrAndreID/gomiddleware"
+)
+
+e := echo.New()
+
+e.Use(gomiddleware.EchoSetMaintenanceMode("fileName.flag"))
+```
+
 ## Versioning
 
 I use [Semantic Versioning](https://semver.org/). For the versions available, see the tags on this repository. 
