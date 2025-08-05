@@ -11,7 +11,7 @@ import (
 func EchoSetMaintenanceMode(fileName string) echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
-			if _, err := os.Stat("maintenance.flag"); err == nil {
+			if _, err := os.Stat(fileName); err == nil {
 				logrus.WithFields(logrus.Fields{
 					"tag": "GoMiddleware.Maintenance.EchoSetMaintenanceMode.01",
 				}).Error("maintenance mode")
