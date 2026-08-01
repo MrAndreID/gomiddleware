@@ -1,4 +1,4 @@
-module github.com/MrAndreID/gomiddleware
+module github.com/MrAndreID/gomiddleware/v2
 
 go 1.26
 
