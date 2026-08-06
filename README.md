@@ -159,6 +159,18 @@ e := echo.New()
 e.Use(gomiddleware.EchoSetMaintenanceMode("fileName.flag"))
 ```
 
+#### Check Application Key for Echo Framework
+
+```go
+import (
+    "github.com/MrAndreID/gomiddleware"
+)
+
+e := echo.New()
+
+e.Use(gomiddleware.EchoCheckApplicationKey("yourApplicationKey"))
+```
+
 ## Versioning
 
 I use [Semantic Versioning](https://semver.org/). For the versions available, see the tags on this repository. 
