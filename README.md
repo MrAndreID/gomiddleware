@@ -144,7 +144,7 @@ import (
 
 e := echo.New()
 
-e.Use(gomiddleware.EchoSetRouteList)
+routeList := gomiddleware.EchoSetRouteList(e.Router().Routes())
 ```
 
 ### Set Maintenance Mode for Echo Framework

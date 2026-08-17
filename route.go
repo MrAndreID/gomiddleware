@@ -1,19 +1,19 @@
 package gomiddleware
 
 import (
-	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v5"
 )
 
-func EchoSetRouteList(routes []*echo.Route) map[string]map[string]string {
+func EchoSetRouteList(routes echo.Routes) map[string]map[string]string {
 	var routeList map[string]map[string]string = make(map[string]map[string]string)
 
 	for _, element := range routes {
-		if _, ok := routeList[element.Path]; !ok {
-			routeList[element.Path] = make(map[string]string)
+		if element.Method == echo.RouteNotFound {
+			continue
 		}
 
-		if element.Name == "github.com/labstack/echo/v4.glob..func1" {
-			continue
+		if _, ok := routeList[element.Path]; !ok {
+			routeList[element.Path] = make(map[string]string)
 		}
 
 		routeList[element.Path][element.Method] = element.Name
