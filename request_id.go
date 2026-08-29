@@ -27,6 +27,8 @@ func EchoSetRequestID(next echo.HandlerFunc) echo.HandlerFunc {
 
 		c.Set("RequestID", &requestID)
 
+		c.Response().Header().Set("X-Request-ID", requestID)
+
 		return next(c)
 	}
 }
